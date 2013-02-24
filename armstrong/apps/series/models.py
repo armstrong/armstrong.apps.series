@@ -9,6 +9,7 @@ from armstrong.core.arm_wells.querysets import GenericForeignKeyQuerySet
 class Series(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
+    slug = models.SlugField()
 
     def __unicode__(self):
         return self.title

@@ -13,8 +13,11 @@ class SeriesAdmin(admin.ModelAdmin):
     model = models.Series
 
     inlines = [
-        'SeriesNodeInline',
+        SeriesNodeInline,
     ]
+    prepopulated_fields = {
+        'slug': ('title', ),
+    }
 
 
 admin.site.register(models.Series, SeriesAdmin)
