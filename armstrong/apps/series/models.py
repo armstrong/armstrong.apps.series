@@ -25,6 +25,9 @@ class Series(models.Model):
 
 
 class SeriesNode(models.Model):
+    class Meta:
+        ordering = ['order', ]
+
     series = models.ForeignKey(Series, related_name='nodes')
 
     order = models.IntegerField(default=0)
